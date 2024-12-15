@@ -40,7 +40,7 @@ const ExpenseDetails = () => {
       {errors && <p className='text-danger'>{errors}</p>}
       <div className="d-flex flex-row-reverse mb-2">
         <button className='btn btn-sm btn-danger' onClick={() =>  setShowDialog(true)}>Delete</button>
-        <button className='btn btn-sm btn-warning mx-2'>Edit</button>
+        <button className='btn btn-sm btn-warning mx-2' onClick={() => navigate(`/edit/${expenseId}`)}>Edit</button>
         <Link className='btn btn-sm btn-secondary' to="/">Back</Link>
       </div>
      <div className="card">
@@ -61,7 +61,13 @@ const ExpenseDetails = () => {
             </tr>
             <tr>
               <th>Date</th>
-              <td>{expense ? DateUtils.formatDateString(expense.date) : "N/A"}</td>
+            <td>
+              {expense
+                ? DateUtils.formatDateString(
+                    typeof expense.date === 'string' ? new Date(expense.date) : expense.date
+                  )
+                : 'N/A'}
+            </td>
             </tr>
             <tr>
               <th>Note</th>
