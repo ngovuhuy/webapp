@@ -33,3 +33,9 @@ nav, .app-primary-bg-color{
     border: none !important;
     outline: none !important;
 }
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: #fd9131 !important;
+}
+.nav-link:hover, .nav-link:focus {
+    color: #ada5a5 !important;
+}
