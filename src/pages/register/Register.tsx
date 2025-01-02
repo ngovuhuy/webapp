@@ -48,6 +48,7 @@ const Register = () => {
             {formik.touched.confirmPassword && formik.errors.confirmPassword ?  <div className="text-danger fst-italic">{formik.errors.confirmPassword}</div> : null}
            </div>
            <button className='btn btn-sm btn-primary btn-outline-light' type='submit'>Register</button>
+           <button className='btn btn-sm btn-warning btn-outline-light' type='reset' onClick={formik.handleReset}>Rest</button>
            </form>
          </div>
       </div>

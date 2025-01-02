@@ -42,6 +42,7 @@ const Login = () => {
 
           
            <button className='btn btn-sm btn-primary btn-outline-light' type='submit'>Login</button>
+           <button className='btn btn-sm btn-warning btn-outline-light' type='reset' onClick={formik.handleReset}>Rest</button>
            </form>
          </div>
       </div>

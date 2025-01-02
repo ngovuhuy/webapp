@@ -15,7 +15,7 @@ const NewExpense = () => {
   const [isLoading, setLoader] = useState<boolean>(false);
   const [initialValues, setInitialValues] = useState<Expense>({
     name: '',
-    amount: 0,
+    amount: '',
     note: '',
     category: '',
     date: new Date().toISOString().split('T')[0]
@@ -95,6 +95,7 @@ const NewExpense = () => {
                     </div>
                     <Dropdown options={expenseCategories} id="category" name="category" label="Category" value={formik.values.category} onChange={formik.handleChange} onBlur={formik.handleBlur} error={formik.errors.category} touched={formik.touched.category}/>
                     <button type="submit" className="btn btn-sm btn-primary btn-outline-light">Save</button>
+                    <button className='btn btn-sm btn-warning btn-outline-light' type='reset' onClick={formik.handleReset}>Rest</button>
                  </form>
         </div>
    </div>
