@@ -1,16 +1,14 @@
-import React from 'react'
+
 import Logo from './Logo'
 import { FaBars } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import { useAuthContext } from '../hooks/useAuthContext'
+import { useSignout } from '../hooks/useSignout'
 
 export const Navbar = () => {
-  const {isAuthenicated, updateAuth} = useAuthContext();
+  const {isAuthenicated} = useAuthContext();
+  const {logout} = useSignout();
 
-  const handleLogout = () => {
-    localStorage.clear();
-    updateAuth(false);
-  };
   return (
     <nav className="navbar navbar-expand-lg">
     <div className="container">
@@ -44,7 +42,7 @@ export const Navbar = () => {
           {
             isAuthenicated ? (
               <>
-        <button className='btn btn-sm btn-danger btn-outline-light' onClick={handleLogout}>
+        <button className='btn btn-sm btn-danger btn-outline-light' onClick={logout}>
         Logout
         </button>
               </>
